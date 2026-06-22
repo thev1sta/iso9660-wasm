@@ -1,12 +1,20 @@
-## iso9660-wasm
+# iso9660-wasm
 [![Go Reference](https://pkg.go.dev/badge/github.com/thev1sta/iso9660-wasm.svg)](https://pkg.go.dev/github.com/thev1sta/iso9660-wasm)
 [![Go Report Card](https://goreportcard.com/badge/github.com/thev1sta/iso9660-wasm)](https://goreportcard.com/report/github.com/thev1sta/iso9660-wasm)
 
-A package for working with ISO9660 files.
+A WebAssembly port of [iso9660](https://github.com/kdomanski/iso9660) library for working with ISO9660 (.iso) files.
 
-Currently only writing ISO files is supported.
+Currently only writing ISO images is supported.
 
-**WORK IN PROGRESS...**
+**Warning!**
+This port is experimental, API and functionality may change in future releases.
+
+## Install
+```bash
+npm install iso9660-wasm
+yarn add iso9660-wasm
+pnpm add iso9660-wasm
+```
 
 ## References for the format:
 - [ECMA-119 1st edition (December 1986)](https://www.ecma-international.org/wp-content/uploads/ECMA-119_1st_edition_december_1986.pdf) ([Web Archive link](http://web.archive.org/web/20210122025258/https://www.ecma-international.org/wp-content/uploads/ECMA-119_1st_edition_december_1986.pdf))
@@ -18,9 +26,35 @@ Currently only writing ISO files is supported.
 
 ## Examples
 
-TODO...
+### Creating ISO file in browser
+```ts
+import { ISOWriter } from 'iso9660-wasm';
+
+// Create iso writer instance
+const iso = await ISOWriter.create();
+
+// Add file to the iso
+iso.addFile("test.txt", new TextEncoder().encode("Hello WebAssembly!"));
+
+// Write image filesystem and get it as a Uint8Array
+const image = await iso.write("DEMO_VOLUME"); // volume id
+
+// Close the iso writer instance and free resources
+iso.close();
+
+// Download the image as a file
+const blob = new Blob([image as Uint8Array<ArrayBuffer>], { type: "application/octet-stream" });
+const url = URL.createObjectURL(blob);
+const a = document.createElement("a");
+a.href = url;
+a.download = "image.iso";
+a.click();
+URL.revokeObjectURL(url);
+```
+
+Also see `demo` folder for complete example
 
 ## TODO
 - Implement reading ISO files (with Rockridge)
 - Bring back Go tests from upstream repo and adapt them for afero fs
-- Rewrite WASM E2E test from slop placeholder
+- Rewrite E2E test of WASM from slop placeholder

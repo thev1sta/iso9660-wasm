@@ -1,6 +1,6 @@
 {
 	"name": "iso9660-wasm",
-	"version": "1.0.0",
+	"version": "0.1.0",
 	"description": "Work with ISO images in browser, powered by WASM Go",
 	"repository": "https://github.com/thev1sta/iso9660-wasm.git",
 	"author": "thev1sta",
