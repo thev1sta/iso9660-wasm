@@ -4,7 +4,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/kdomanski/iso9660/util"
+	"github.com/thev1sta/iso9660-wasm/util"
 )
 
 func main() {

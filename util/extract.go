@@ -6,7 +6,7 @@ import (
 	"os"
 	"path"
 
-	"github.com/kdomanski/iso9660"
+	"github.com/thev1sta/iso9660-wasm"
 )
 
 func ExtractImageToDirectory(image io.ReaderAt, destination string) error {

@@ -4,7 +4,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/kdomanski/iso9660"
+	"github.com/thev1sta/iso9660-wasm"
 )
 
 func main() {
@@ -21,5 +21,5 @@ func main() {
 		log.Fatal(err)
 	}
 
-	wr.WriteTo(os.Stdout, "github.com/kdomanski/iso9660")
+	wr.WriteTo(os.Stdout, "github.com/thev1sta/iso9660-wasm")
 }
