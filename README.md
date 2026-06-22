@@ -2,12 +2,9 @@
 [![Go Reference](https://pkg.go.dev/badge/github.com/thev1sta/iso9660-wasm.svg)](https://pkg.go.dev/github.com/thev1sta/iso9660-wasm)
 [![Go Report Card](https://goreportcard.com/badge/github.com/thev1sta/iso9660-wasm)](https://goreportcard.com/report/github.com/thev1sta/iso9660-wasm)
 
-A package for reading and creating ISO9660
+A package for working with ISO9660 files.
 
-Joliet extension is **NOT** supported.
-
-Experimental support for reading Rock Ridge extension is currently in the works.
-If you are experiencing issues, please use the v0.3 release, which ignores Rock Ridge.
+Currently only writing ISO files is supported.
 
 **WORK IN PROGRESS...**
 
@@ -22,3 +19,8 @@ If you are experiencing issues, please use the v0.3 release, which ignores Rock 
 ## Examples
 
 TODO...
+
+## TODO
+- Implement reading ISO files (with Rockridge)
+- Bring back Go tests from upstream repo and adapt them for afero fs
+- Rewrite WASM E2E test from slop placeholder
