@@ -44,7 +44,7 @@ a.click();
 URL.revokeObjectURL(url);
 ```
 
-Also [complete example](https://github.com/thev1sta/iso9660-wasm/blob/master/demo/index.html) in `demo` folder.
+Also see [complete example](https://github.com/thev1sta/iso9660-wasm/blob/master/demo/index.html) in `demo` folder.
 
 ## References for the format:
 - [ECMA-119 1st edition (December 1986)](https://www.ecma-international.org/wp-content/uploads/ECMA-119_1st_edition_december_1986.pdf) ([Web Archive link](http://web.archive.org/web/20210122025258/https://www.ecma-international.org/wp-content/uploads/ECMA-119_1st_edition_december_1986.pdf))
@@ -58,3 +58,13 @@ Also [complete example](https://github.com/thev1sta/iso9660-wasm/blob/master/dem
 - Implement reading ISO files (with Rockridge)
 - Bring back Go tests from upstream repo and adapt them for afero fs
 - Rewrite E2E test of WASM from slop placeholder
+
+## Licensing
+**Original package**
+
+iso9660 - https://github.com/kdomanski/iso9660
+Copyright (c) 2019-2020, Kamil Domański and contributors
+
+This project is licensed under the BSD-2-Clause License - see the LICENSE file for details.
+
+This project includes [spf13/afero](https://github.com/spf13/afero) library by Steve Francia licensed under the Apache License 2.0 which can be obtained from https://www.apache.org/licenses/LICENSE-2.0.txt
