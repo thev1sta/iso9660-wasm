@@ -63,6 +63,7 @@ Also see [complete example](https://github.com/thev1sta/iso9660-wasm/blob/master
 **Original package**
 
 iso9660 - https://github.com/kdomanski/iso9660
+
 Copyright (c) 2019-2020, Kamil Domański and contributors
 
 This project is licensed under the BSD-2-Clause License - see the LICENSE file for details.
